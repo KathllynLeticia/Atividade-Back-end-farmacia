@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -14,6 +15,8 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 
@@ -44,50 +47,73 @@ public class Produto {
 	
 	private String lote;
 	
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Categoria categoria;
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public LocalDateTime getValidade() {
 		return validade;
 	}
+
 	public void setValidade(LocalDateTime validade) {
 		this.validade = validade;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public float getValor() {
 		return valor;
 	}
+
 	public void setValor(float valor) {
 		this.valor = valor;
 	}
+
 	public String getGenerico() {
 		return generico;
 	}
+
 	public void setGenerico(String generico) {
 		this.generico = generico;
 	}
+
 	public String getFornecedor() {
 		return fornecedor;
 	}
+
 	public void setFornecedor(String fornecedor) {
 		this.fornecedor = fornecedor;
 	}
+
 	public String getLote() {
 		return lote;
 	}
+
 	public void setLote(String lote) {
 		this.lote = lote;
 	}
-	
-	
-	
-	
+
+	public Categoria getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(Categoria categorias) {
+		this.categorias = categorias;
+	}
 }
+	
+	
