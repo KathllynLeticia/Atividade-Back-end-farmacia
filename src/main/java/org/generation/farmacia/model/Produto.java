@@ -107,12 +107,12 @@ public class Produto {
 		this.lote = lote;
 	}
 
-	public Categoria getCategorias() {
-		return categorias;
+	public Categoria getCategoria() {
+		return categoria;
 	}
 
-	public void setCategorias(Categoria categorias) {
-		this.categorias = categorias;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 }
 	
